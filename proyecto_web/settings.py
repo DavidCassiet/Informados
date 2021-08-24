@@ -134,7 +134,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR),'static'),
     BASE_DIR / 'static',
-    BASE_DIR / 'quizes' / 'static',
+    BASE_DIR / 'appweb' / 'static' / 'appcuestionarios',
 )
 
 # Default primary key field type
@@ -142,6 +142,6 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL= 'inicioUs'
+LOGIN_REDIRECT_URL= '/inicio'
 
-LOGOUT_REDIRECT_URL= 'index'
+#LOGOUT_REDIRECT_URL= '/inicio/logout/'
