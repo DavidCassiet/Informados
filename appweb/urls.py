@@ -9,12 +9,10 @@ from django.contrib.auth.views import (
     LogoutView,
 )
 
-app_name = 'inicio'
-
 urlpatterns = [
     path('', inicio.index, name= "index"),
     path('login/', LoginView.as_view(template_name= "login.html"), name= "login"),
-    path('logout/', LogoutView.as_view(template_name= "logout.html"), name= "logout"),
+    #path('logout/', LogoutView.as_view(template_name= "logout.html"), name= "logout"),
     path('inicio/logout/', LogoutView.as_view(template_name= "logout.html"), name= "logout"),
     path("register/", register, name="register"),
     path('inicio/', inicioUs.index, name= "inicioUs"),

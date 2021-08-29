@@ -7,11 +7,11 @@
 
 {% block title %}
 
-home
+inicio
 
-{% endblock title%}
+{% endblock title %}
 
-{% block content%}
+{% block content %}
  
 <!-- Modal -->
 <div class="modal fade" id="CuestionarioStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -32,11 +32,11 @@ home
 </div>
 </div>
 
-<div class="h1">Cuestionario</div>
+<div class="h1">Cuestionarios</div>
 <hr>
 {% for obj in object_list %}
     <button
-        class="btn btn-link modal-button"
+        class="btn btn-outline-success btn-block modal-button"
         data-pk="{{obj.pk}}"
         data-cuestionario="{{obj.nombre}}"
         data-preguntas="{{obj.cant_preguntas}}"

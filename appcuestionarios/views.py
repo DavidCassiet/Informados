@@ -29,7 +29,6 @@ def cuestionario_data_view(request, pk):
     })
 
 def guardar_cuestionario_view(request, pk):
-    #print(request.POST)
     if request.is_ajax():
         preguntas = []
         data = request.POST

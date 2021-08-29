@@ -6,8 +6,6 @@ from .views import (
     guardar_cuestionario_view,
 )
 
-app_name = 'appweb'
-
 urlpatterns = [
     path('juego/', CuestionarioListView.as_view(), name='main-view'),
     path('juego/<pk>/', cuestionario_view, name= "cuestionario-view"),
