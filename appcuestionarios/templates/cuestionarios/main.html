@@ -32,22 +32,30 @@ inicio
 </div>
 </div>
 
-<div class="h1">Cuestionarios</div>
+<div class="h1">Categorias</div>
 <hr>
 {% for obj in object_list %}
-    <button
-        class="btn btn-outline-success btn-block modal-button"
-        data-pk="{{obj.pk}}"
-        data-cuestionario="{{obj.nombre}}"
-        data-preguntas="{{obj.cant_preguntas}}"
-        data-categorias="{{obj.categorias}}"
-        data-tiempo="{{obj.tiempo}}"
-        data-pass = "{{obj.ptaje_requerido}}"
-        data-toggle="modal" 
-        data-target="#CuestionarioStartModal">
-        {{obj.nombre}}
-    </button><br>
-
+<div class="card mb-3">
+    <img src="{% static 'Cuestionario.jpg' %}" class="card-img-top" alt="..." height="400">
+    <div class="card-body">
+      <h5 class="card-title">{{obj.categorias}}</h5>
+      <p class="card-text">{{obj.categorias.descripcion}}</p>
+      <div class="d-grid gap-4 col-2 mx-auto">
+        <button
+            class="btn btn-outline-success"
+            data-pk="{{obj.pk}}"
+            data-cuestionario="{{obj.nombre}}"
+            data-preguntas="{{obj.cant_preguntas}}"
+            data-categorias="{{obj.categorias}}"
+            data-tiempo="{{obj.tiempo}}"
+            data-pass = "{{obj.ptaje_requerido}}"
+            data-toggle="modal" 
+            data-target="#CuestionarioStartModal">
+            {{"JUGAR"}}
+        </button><br>
+      </div>
+    </div>
+</div>
 {% endfor %}
 
 {% endblock content %}

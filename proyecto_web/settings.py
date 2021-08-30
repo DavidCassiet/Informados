@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'apppreguntas',
     'appresultados',
     'crispy_forms',
-    'django_social_share'
+    'django_social_share',
     
 ]
 

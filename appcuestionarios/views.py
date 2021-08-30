@@ -2,7 +2,7 @@ from django.shortcuts import render
 from apppreguntas.models import Pregunta, Respuesta
 from appresultados.models import Resultado
 from django.http.response import JsonResponse
-from .models import Cuestionario
+from .models import Cuestionario, Categoria
 from django.views.generic import ListView
 
 # Create your views here.
@@ -74,3 +74,14 @@ def guardar_cuestionario_view(request, pk):
             return JsonResponse({'pasado': True, 'puntaje': puntaje_, 'resultados': resultados})
         else:
             return JsonResponse({'pasado': False, 'puntaje': puntaje_, 'resultados': resultados})
+
+#CATEGORIA
+
+
+def categorias(request):
+    categorias = Categoria.objects.all()
+    template = "categorias/categoria.html"
+    context = {
+        "categorias": categorias
+    }
+    return render(request, template, context)

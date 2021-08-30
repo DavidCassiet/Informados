@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block title %}
+    Ranking
+{% endblock title %}
+
+{% block content %}
+
+<center><h2>Ranking General</h2></center>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Puntaje</th>
+        <th scope="col">Categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for r in resultados %} 
+            <tr>
+                    
+                    <td>{{forloop.counter}}</td>
+                    <td>{{r.usuario}}</td>
+                    <td>{{r.puntaje}}</td>
+                    <td>{{r.cuestionario.categorias}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
