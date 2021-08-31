@@ -42,8 +42,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"></ul>
-        <button onclick="window.location.href='http://127.0.0.1:8000/ranking/'" class="btn btn-outline-info mr-2">Ver Ranking</button>
-          <button onclick="window.location.href='http://127.0.0.1:8000/inicio/logout/'" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Sesión</button>
+        <a href="{% url 'ranking' %}" class="btn btn-outline-info mr-2">Ver Ranking</a>
+        <a href="{% url 'logout' %}" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Sesión</a>
       </div>
   </nav>
   <!--NAV HEADER-->
