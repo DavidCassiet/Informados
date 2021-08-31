@@ -3,8 +3,11 @@
 }
 
 body {
-    height: 100%;
-}
+    height: 100%; }
+
+body {
+    background: url(fondoweb.jpg) no-repeat center center fixed;
+    background-size: cover;}
 
 .not-visible {
     display: none;

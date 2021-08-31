@@ -7,9 +7,10 @@
 
 {% block content %}
 
-<center><h2>Ranking General</h2></center>
-<table class="table">
-    <thead>
+<center><h2 class="text-white">Ranking General</h2></center>
+<div class="table-responsive">
+<table class="table table-dark table-striped table-borderless">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Usuario</th>
@@ -30,5 +31,6 @@
         {% endfor %}
     </tbody>
 </table>
+</div>
 
 {% endblock content %}

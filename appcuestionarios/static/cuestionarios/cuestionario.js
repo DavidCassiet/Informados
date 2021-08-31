@@ -141,7 +141,7 @@ const sendData = () => {
             console.log(resultados)
             cuestionarioForm.classList.add('not-visible')
 
-            puntajeBox.innerHTML = `<h4>${response.pasado ? 'Felicidades! ' : 'Que lástima..:( '}Tu resultado es ${response.puntaje.toFixed(2)}%</h4>`
+            puntajeBox.innerHTML = `<h4 class="text-white">${response.pasado ? 'Felicidades! ' : 'Que lástima..:( '}Tu resultado es ${response.puntaje.toFixed(2)}%</h4>`
 
             resultados.forEach(res=>{
                 const resDiv = document.createElement("div")

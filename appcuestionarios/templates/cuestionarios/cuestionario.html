@@ -11,14 +11,14 @@
 {% endblock title %}
 
 {% block content %}
-<div class="container my-4">
+<div class="container mb-3">
     <div class="row">
         <div class="col">
             <h4 id="nombreuser"></h4>
-            <h3>{{obj.nombre}}</h3>
+            <h3 class="text-white">{{obj.nombre}}</h3>
             <h6 class="text-danger mb-3">Puntaje para pasar: {{obj.ptaje_requerido}}%</h6>
         </div>
-        <div class="col text-right" id="timer-box"></div>
+        <div class="col text-right text-white" id="timer-box"></div>
     </div>
 
 
@@ -35,7 +35,7 @@
 
     <div class="container">
         <div class="row justify-content-md-center">
-            <h6>Compartir</h6>
+            <h6 class="text-white">Compartir</h6>
         </div>
         <div class="row justify-content-md-center">
             {% post_to_whatsapp request.build_absolute_uri %}
@@ -44,5 +44,6 @@
             {% send_email Mi resultado request.build_absolute_uri %}
         </div>
     </div>
+</div>
 
-    {% endblock content %}
+{% endblock content %}
