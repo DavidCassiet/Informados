@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-awgot9q%ssw2b@f(c5c1e0zf5ukjas5lznc4xdpwr4m(knk-o+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ambiente = os.environ.get('ENVIRONMENT')
+ambiente = os.environ.get('ENVIROMENT')
 
 if ambiente == "PROD":
     DEBUG = False
