@@ -7,29 +7,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'info.ico' %}"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <!-- custom css & js-->
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    
 
     {% block scripts %}
     {% endblock scripts %}
 
-    <title>Cuestionario {% block title %}{% endblock title %}</title>
+    <title>Cuestionario app | {% block title %}{% endblock title %}</title>
   </head>
   <body>
+
+    <!--NAV HEADER-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="{% url 'main-view' %}">
+        <img src="{% static 'logoinfo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        Informatorio
+      </a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link"><span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <a href="{% url 'ranking' %}" class="btn btn-outline-info mr-2">Ver Ranking</a>
+        <a href="{% url 'logout' %}" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Sesión</a>
+      </div>
+  </nav>
+  <!--NAV HEADER-->
+  
     <div class="container mt-3">
         {% block content %}
+      
         {% endblock content %}
     </div>
+
+     <!--FOOTER-->
+  <footer class="text-center text-white" style="background-color: #093947;">
+    <div class="text-center p-3">
+      <img src="{% static 'gob.png' %}"></img>
+      <p>&copy; INFORMATORIO.  <a href="https://github.com/DavidCassiet/Proyecto-Final" target="_blank">Grupo N° 9</a></p>
+    </div>
+  </footer>
+  <!--FOOTER-->
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
   </body>
 </html>

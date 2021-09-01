@@ -24,7 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-awgot9q%ssw2b@f(c5c1e0zf5ukjas5lznc4xdpwr4m(knk-o+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+ambiente = os.environ.get('ENVIRONMENT')
+
+if ambiente == "PROD":
+    DEBUG = False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -44,6 +50,7 @@ INSTALLED_APPS = [
     'apppreguntas',
     'appresultados',
     'crispy_forms',
+    'django_social_share',
     
 ]
 
@@ -136,6 +143,7 @@ STATICFILES_DIRS = (
     BASE_DIR / 'static',
     BASE_DIR / 'appweb' / 'static' / 'appcuestionarios',
 )
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -143,5 +151,9 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL= '/inicio'
+
+if ambiente == "PROD":
+    import django_heroku
+    django_heroku.settings(locals())
 
 #LOGOUT_REDIRECT_URL= '/inicio/logout/'

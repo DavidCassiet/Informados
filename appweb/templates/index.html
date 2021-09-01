@@ -31,52 +31,28 @@
                 </div>
               {% endfor %}
           {% endif %}
-          <h3 class="masthead-brand">Bienvenido</h3>
+          <div class="masthead-brand" style="text-align: left"><img src="{% static 'logoinfo.png' %}" width="80" />Bienvenidos</div>
           <nav class="nav nav-masthead">
-            <a class="nav-link nav-social" href="#" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-            <a class="nav-link nav-social" href="#" title="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-            <a class="nav-link nav-social" href="#" title="Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-            <a class="nav-link nav-social" href="#" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a class="nav-link nav-social" href="https://www.facebook.com/informatorio/" target="_blank" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a class="nav-link nav-social" href="https://twitter.com/InformatorioCh" target="_blank" title="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a class="nav-link nav-social" href="https://www.instagram.com/informatorio/?hl=es-la" target="_blank" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           </nav>
         </div>
+      </div>
+      <div class="cover">
+        <img src="{% static 'img/chaco.png' %}"  height="210" width="650"/>
       </div>      
       <div class="inner cover">
-        <h1 class="cover-heading">Informados</h1>
         <p class="lead cover-copy">70° Aniversario de la provincialización del CHACO.</p>
-        <p class="lead"><button type="button" onclick="location.href='login'" class="btn btn-lg btn-default btn-notify" data-toggle="modal" data-target="#subscribeModal">Ingresar</button>
+        <p class="lead"><button type="button" onclick="location.href='login'" class="btn btn-lg btn-default btn-notify">Ingresar</button>
           <button onclick="location.href='register'" type="button" class="btn btn-lg btn-default btn-notify">Registrar</button></p>
       </div>
       <div class="mastfoot">
         <div class="inner">
           <p>&copy; INFORMATORIO.  <a href="https://github.com/DavidCassiet/Proyecto-Final" target="_blank">Grupo N° 9</a>.</p>
+          <img  src="{% static 'img/logoss.png' %}"/>
         </div>
       </div>
-      <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="subscribeModalLabel">Get Notified on Launch:</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="form-control-label">Enter you e-mail to get notified when we launch</label>
-                  <input type="text" class="form-control" id="recipient-name" placeholder="your-name@example.com">
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default">Subscribe</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    
-
-
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

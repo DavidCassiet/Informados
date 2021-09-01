@@ -7,47 +7,76 @@
 
 {% block title %}
 
-home
+inicio
 
-{% endblock title%}
+{% endblock title %}
 
-{% block content%}
- 
-<!-- Modal -->
-<div class="modal fade" id="CuestionarioStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">¿Empezar?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
+<body>
+
+    {% block content %}
+    
+    <!-- Modal -->
+    <div class="modal fade" id="CuestionarioStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">¿Empezar?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="modal-body-confirm"></div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+            <button type="button" id="start-button" class="btn btn-success">Si</button>
+        </div>
+        </div>
     </div>
-    <div class="modal-body" id="modal-body-confirm"></div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
-        <button type="button" id="start-button" class="btn btn-success">Si</button>
     </div>
+
+    <div class="h1 text-white">Categorias</div>
+    <hr>
+    {% for obj in object_list %}
+    <div class="card mb-3">
+        {% if obj.nombre == 'Cultura y Arte' %}
+            <img src="{% static 'Arte.jpeg' %}" class="card-img-top" alt="..." height="400">
+        {% elif obj.nombre == 'Deporte' %}
+            <img src="{% static 'deporte.jpeg' %}" class="card-img-top" alt="..." height="400">
+        {% elif obj.nombre == 'Economía' %}
+            <img src="{% static 'economia.jpg' %}" class="card-img-top" alt="..." height="400">
+        {% elif obj.nombre == 'Geografía' %}
+            <img src="{% static 'geografia.jpg' %}" class="card-img-top" alt="..." height="400">
+        {% elif obj.nombre == 'Historia' %}
+            <img src="{% static 'historia.jpeg' %}" class="card-img-top" alt="..." height="400">
+        {% elif obj.nombre == 'Entretenimiento' %}
+            <img src="{% static 'entretenimiento.jpg' %}" class="card-img-top" alt="..." height="400">
+        {% elif obj.nombre == 'Ciencia y Educación' %}
+            <img src="{% static 'ciencia.jpg' %}" class="card-img-top" alt="..." height="400">
+        {% else %}
+            <img src="{% static 'Cuestionario.jpg' %}" class="card-img-top" alt="..." height="400">
+        
+        {% endif %}
+        <div class="card-body">
+        <h5 class="card-title">{{obj.categorias}}</h5>
+        <p class="card-text">{{obj.categorias.descripcion}}</p>
+        <div class="d-grid gap-4 col-2 mx-auto">
+            <button
+                class="btn btn-outline-success btn-block"
+                data-pk="{{obj.pk}}"
+                data-cuestionario="{{obj.nombre}}"
+                data-preguntas="{{obj.cant_preguntas}}"
+                data-categorias="{{obj.categorias}}"
+                data-tiempo="{{obj.tiempo}}"
+                data-pass = "{{obj.ptaje_requerido}}"
+                data-toggle="modal" 
+                data-target="#CuestionarioStartModal">
+                {{"JUGAR"}}
+            </button><br>
+        </div>
+        </div>
     </div>
-</div>
-</div>
+    {% endfor %}
 
-<div class="h1">Cuestionario</div>
-<hr>
-{% for obj in object_list %}
-    <button
-        class="btn btn-link modal-button"
-        data-pk="{{obj.pk}}"
-        data-cuestionario="{{obj.nombre}}"
-        data-preguntas="{{obj.cant_preguntas}}"
-        data-categorias="{{obj.categorias}}"
-        data-tiempo="{{obj.tiempo}}"
-        data-pass = "{{obj.ptaje_requerido}}"
-        data-toggle="modal" 
-        data-target="#CuestionarioStartModal">
-        {{obj.nombre}}
-    </button><br>
+    {% endblock content %}
 
-{% endfor %}
-
-{% endblock content %}
+</body>

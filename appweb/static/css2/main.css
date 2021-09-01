@@ -29,7 +29,7 @@ body {
   height: 100%; }
 
 body {
-  background: url(C:\proyecto_informatorio\bandera_chaco.jpg) no-repeat center center fixed;
+  background: url(../img/fondoweb.jpg) no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -62,7 +62,7 @@ body {
  */
 .masthead-brand {
   margin-top: 10px;
-  margin-bottom: 10px; }
+  font-size: 25px; }
 
 .nav-masthead {
   text-align: center;

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from apppreguntas.models import Pregunta, Respuesta
 from appresultados.models import Resultado
 from django.http.response import JsonResponse
-from .models import Cuestionario
+from .models import Cuestionario, Categoria
 from django.views.generic import ListView
 
 # Create your views here.
@@ -29,7 +29,6 @@ def cuestionario_data_view(request, pk):
     })
 
 def guardar_cuestionario_view(request, pk):
-    #print(request.POST)
     if request.is_ajax():
         preguntas = []
         data = request.POST

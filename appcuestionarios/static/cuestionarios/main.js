@@ -1,6 +1,4 @@
-console.log('hello world')
-
-const modalBtns = [...document.getElementsByClassName('modal-button')]
+const modalBtns = [...document.getElementsByClassName("btn btn-outline-success")]
 const modalBody = document.getElementById('modal-body-confirm')
 const startBtn = document.getElementById('start-button')
 
@@ -15,7 +13,7 @@ modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=>{
     const tiempo = modalBtn.getAttribute('data-tiempo')
     
     modalBody.innerHTML = `
-        <div class="h5 mb-3">¿Estas seguro que queres empezar? "<b>${nombre}</b>"?</div>
+        <div class="h5 mb-3">¿Estas seguro que queres empezar "<b>${nombre}</b>"?</div>
         <div class=text-muted
             <ul>
                 <li>Categoria: <b>${categorias}</b></li>

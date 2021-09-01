@@ -4,7 +4,7 @@ from appcuestionarios.models import Cuestionario
 # Create your models here.
 
 class Pregunta(models.Model):
-    descripcion = models.TextField()
+    descripcion = models.CharField(max_length=300)
     cuestionario = models.ForeignKey(Cuestionario, on_delete=models.CASCADE)
     fechaCreacion = models.DateTimeField(auto_now_add=True)
 
@@ -15,7 +15,7 @@ class Pregunta(models.Model):
         return self.respuesta_set.all()
 
 class Respuesta(models.Model):
-    descripcion = models.TextField()
+    descripcion = models.CharField(max_length=300)
     validacion = models.BooleanField(default=False)
     pregunta = models.ForeignKey(Pregunta, on_delete=models.CASCADE ,null=True, blank=True)
     fechaCreacion = models.DateTimeField(auto_now_add=True)
