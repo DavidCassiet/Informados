@@ -38,19 +38,19 @@ inicio
     <hr>
     {% for obj in object_list %}
     <div class="card mb-3">
-        {% if obj.nombre == 'Cultura y Arte' %}
+        {% if obj.categorias.nombre == 'Cultura y Arte' %}
             <img src="{% static 'Arte.jpeg' %}" class="card-img-top" alt="..." height="400">
-        {% elif obj.nombre == 'Deporte' %}
+        {% elif obj.categorias.nombre == 'Deporte' %}
             <img src="{% static 'deporte.jpeg' %}" class="card-img-top" alt="..." height="400">
-        {% elif obj.nombre == 'Economía' %}
+        {% elif obj.categorias.nombre == 'Economía' %}
             <img src="{% static 'economia.jpg' %}" class="card-img-top" alt="..." height="400">
-        {% elif obj.nombre == 'Geografía' %}
+        {% elif obj.categorias.nombre == 'Geografía' %}
             <img src="{% static 'geografia.jpg' %}" class="card-img-top" alt="..." height="400">
-        {% elif obj.nombre == 'Historia' %}
+        {% elif obj.categorias.nombre == 'Historia' %}
             <img src="{% static 'historia.jpeg' %}" class="card-img-top" alt="..." height="400">
-        {% elif obj.nombre == 'Entretenimiento' %}
+        {% elif obj.categorias.nombre == 'Entretenimiento' %}
             <img src="{% static 'entretenimiento.jpg' %}" class="card-img-top" alt="..." height="400">
-        {% elif obj.nombre == 'Ciencia y Educación' %}
+        {% elif obj.categorias.nombre == 'Ciencia y Educación' %}
             <img src="{% static 'ciencia.jpg' %}" class="card-img-top" alt="..." height="400">
         {% else %}
             <img src="{% static 'Cuestionario.jpg' %}" class="card-img-top" alt="..." height="400">

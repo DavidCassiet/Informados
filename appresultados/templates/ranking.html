@@ -20,6 +20,7 @@
     </thead>
     <tbody>
         {% for r in resultados %} 
+          {% if r.puntaje > 59 %}
             <tr>
                     
                     <td>{{forloop.counter}}</td>
@@ -28,6 +29,7 @@
                     <td>{{r.cuestionario.categorias}}</td>
 
             </tr>
+          {% endif %}
         {% endfor %}
     </tbody>
 </table>
