@@ -24,6 +24,7 @@
     <title>Cuestionario app | {% block title %}{% endblock title %}</title>
   </head>
   <body>
+    <header>
 
     <!--NAV HEADER-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -46,9 +47,10 @@
         <a href="{% url 'logout' %}" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Sesión</a>
       </div>
   </nav>
+</header>
   <!--NAV HEADER-->
   
-    <div class="container mt-3">
+    <div class="container mt-3" id="main">
         {% block content %}
       
         {% endblock content %}
