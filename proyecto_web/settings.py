@@ -32,7 +32,7 @@ if ambiente == "PROD":
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['quiz-info2021-com06-grupo9.herokuapp.com']
 
 
 # Application definition
