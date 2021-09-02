@@ -56,12 +56,12 @@ inicio
             <img src="{% static 'Cuestionario.jpg' %}" class="card-img-top" alt="..." height="400">
         
         {% endif %}
-        <div class="card-body">
-        <h5 class="card-title">{{obj.categorias}}</h5>
+        <div class="card-body bg-dark">
+        <h5 class="card-title text-white">{{obj.categorias}}</h5>
         <p class="card-text">{{obj.categorias.descripcion}}</p>
         <div class="d-grid gap-4 col-2 mx-auto">
             <button
-                class="btn btn-outline-success btn-block"
+                class="btn btn-success btn-block"
                 data-pk="{{obj.pk}}"
                 data-cuestionario="{{obj.nombre}}"
                 data-preguntas="{{obj.cant_preguntas}}"

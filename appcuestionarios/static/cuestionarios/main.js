@@ -1,4 +1,4 @@
-const modalBtns = [...document.getElementsByClassName("btn btn-outline-success")]
+const modalBtns = [...document.getElementsByClassName("btn btn-success")]
 const modalBody = document.getElementById('modal-body-confirm')
 const startBtn = document.getElementById('start-button')
 
