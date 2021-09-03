@@ -39,7 +39,7 @@ inicio
     {% for obj in object_list %}
     <div class="card mb-3">
         {% if obj.categorias.nombre == 'Cultura y Arte' %}
-            <img src="{% static 'Arte.jpeg' %}" class="card-img-top" alt="..." height="400">
+            <img src="{% static 'arte.jpeg' %}" class="card-img-top" alt="..." height="400">
         {% elif obj.categorias.nombre == 'Deporte' %}
             <img src="{% static 'deporte.jpeg' %}" class="card-img-top" alt="..." height="400">
         {% elif obj.categorias.nombre == 'Economía' %}
