@@ -1,4 +1,5 @@
 {% load static %}
+{% from proyecto_web.settings import * %}
 <!DOCTYPE html>
 <html lang="es-AR">
     <meta charset="utf-8">
@@ -66,14 +67,27 @@
                 <script src="{% static 'js/jquery.js' %}"></script>
                 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-                <script type="text/javascript">
-                    $(document).ready(function(){
-                        setTimeout(function(){
-                            window.location.replace('http://127.0.0.1:8000/') 
-                            window.clearTimeout(tID);
-                        },1500);
-                    })
-                </script>
+                {% if ambiente == "PROD" %}
+
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            setTimeout(function(){
+                                window.location.replace('https://quiz-info2021-com06-grupo9.herokuapp.com/') 
+                                window.clearTimeout(tID);
+                            },1500);
+                        })
+                    </script>
+
+                {% else %}
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            setTimeout(function(){
+                                window.location.replace('http://127.0.0.1:8000/') 
+                                window.clearTimeout(tID);
+                            },1500);
+                        })
+                    </script>
+                {% endif %}
         
     </body>
 </html> 
