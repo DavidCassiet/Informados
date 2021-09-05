@@ -20,3 +20,25 @@ body {
 #main {
     flex: 1 0 auto;
 }
+
+/* Animacion de card */
+
+.contenedor-card {
+    margin: auto;
+}
+
+.card-categoria {
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+    border: 1px solid white;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+.card-categoria:hover{
+    height: 420px;
+    transition: all .4s ease-in-out;
+}
+
+.card-body-categoria {
+    height: 20px;
+}
