@@ -27,10 +27,7 @@ SECRET_KEY = 'django-insecure-awgot9q%ssw2b@f(c5c1e0zf5ukjas5lznc4xdpwr4m(knk-o+
 
 ambiente = os.environ.get('ENVIRONMENT')
 
-if ambiente == "PROD":
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['quiz-info2021-com06-grupo9.herokuapp.com', 'localhost']
 
