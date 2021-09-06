@@ -25,9 +25,12 @@ SECRET_KEY = 'django-insecure-awgot9q%ssw2b@f(c5c1e0zf5ukjas5lznc4xdpwr4m(knk-o+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ambiente = os.environ.get('ENVIRONMENT')
+ambiente = os.environ.get('ENVIROMENT')
 
-DEBUG = False
+if ambiente == "PROD":
+    DEBUG = False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = ['quiz-info2021-com06-grupo9.herokuapp.com', 'localhost']
 
